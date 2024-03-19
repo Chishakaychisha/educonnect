@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "educonnect_backend": {
+      "build": "npx azle educonnect_backend",
+      "candid": "src/educonnect_backend/educonnect_backend.did",
+      "gzip": true,
+      "main": "src/educonnect_backend/src/index.ts",
+      "type": "custom",
+      "wasm": ".azle/educonnect_backend/educonnect_backend.wasm"
+    },
+    "educonnect_frontend": {
+      "dependencies": [
+        "educonnect_backend"
+      ],
+      "source": [
+        "src/educonnect_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "educonnect_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
